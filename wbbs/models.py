@@ -62,4 +62,3 @@ class History(models.Model):
     null=False,
     verbose_name='发送时间'
   )
-

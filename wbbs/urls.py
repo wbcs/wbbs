@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.urls import path
 from wbbs.views.login import LoginView
+from wbbs.views.sign_up import SignUpView, VerificationCodeView
 
 urlpatterns = [
-    path('login/', LoginView.as_view())
+    path('login/', LoginView.as_view()),
+    # path('sign-up/', SignUpView.as_view()),
+    # path('sign-up/verification-code/', VerificationCodeView.as_view()),
 ]

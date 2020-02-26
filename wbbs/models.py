@@ -1,13 +1,16 @@
 from django.db import models
 
+DEFAULT_AVATAR = 'https://tvax3.sinaimg.cn/crop.0.0.996.996.180/005PtqPcly8gc7zaojbw7j30ro0roq49.jpg?KID=imgbed,tva&Expires=1582711984&ssig=Wx3IzOS5Wg'
+
 class User(models.Model):
   class Meta:
     db_table = 'table_user'
     ordering = ('-create_time',)
 
   phone_number = models.CharField(max_length=11, primary_key=True)
+  password = models.CharField(max_length=100, null=False, default='')
   name = models.CharField(max_length=50)
-  avatar = models.CharField(max_length=200)
+  avatar = models.CharField(max_length=300, default=DEFAULT_AVATAR)
 
   create_time = models.DateTimeField(
     auto_now_add=True,
